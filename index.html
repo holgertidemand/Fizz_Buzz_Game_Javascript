@@ -18,10 +18,10 @@
     <div>
         <img src="img/FizzBuzz.jpg" alt="I'm Fizz and I'm Buzz"/>
     </div>
-    <h3>
+    <h4>
         Would you like to play?
-    </h3>
-     <button class="button">Click Here!</button>
+    </h4>
+     <button class="button">Click Here!!</button>
     <h4>
       Results:
     </h4>
@@ -36,7 +36,7 @@
 
         $('.button').click(function() {
          number = prompt('Type any number!');
-           $('.block').append("<p>" + number + " = " + fizzBuzz(number) + "</p>");
+           $('.block').prepend("<p>" + number + " = " + fizzBuzz(number) + "</p>");
          } );
    </script>
 

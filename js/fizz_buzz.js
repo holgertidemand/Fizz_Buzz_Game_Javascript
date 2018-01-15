@@ -2,7 +2,7 @@ function fizzBuzz(number) {
   if (isNaN(number)) {
       return 'Give me a number. Please.'
   }
-  else if (number < 0) {
+  else if (number <= 0) {
     return 'Give me a positive number. Please.'
   }
   else if (number % 15 == 0) {

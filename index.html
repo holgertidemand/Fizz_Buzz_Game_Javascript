@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="js/fizz_buzz.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <title>FizzBuzz Game</title>
@@ -11,11 +12,17 @@
   <body>
 
 
-     <h1>Hello and Welcome to the FizzBuzz Game!</h1>
-     <p>
+     <h1>Welcome to the FizzBuzz Game!</h1>
+     <h3>
         Would you like to play?
-     </p>
-     <button class="button">Click here</button>
+     </h3>
+     <button class="button">Click Here!</button>
+
+     <div class="block">
+        <ol class="list">
+
+        </ol>
+     </div>
 
 
    <script>
@@ -24,9 +31,8 @@
         });
 
         $('.button').click(function() {
-         alert('Hello');
          number = prompt('Type any number!');
-         fizzBuzz(number);
+           $('.list').append("<li>" + fizzBuzz(number) + "</li>");
          } );
    </script>
 

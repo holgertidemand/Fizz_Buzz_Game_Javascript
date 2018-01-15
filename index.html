@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -12,17 +12,21 @@
   <body>
 
 
-     <h1>Welcome to the FizzBuzz Game!</h1>
-     <h3>
+    <h1>
+       Welcome to the FizzBuzz Game!
+    </h1>
+    <div>
+        <img src="img/FizzBuzz.jpg" alt="I'm Fizz and I'm Buzz"/>
+    </div>
+    <h3>
         Would you like to play?
-     </h3>
+    </h3>
      <button class="button">Click Here!</button>
-
-     <div class="block">
-        <ol class="list">
-
-        </ol>
-     </div>
+    <h4>
+      Results:
+    </h4>
+    <div class="block">
+    </div>
 
 
    <script>
@@ -32,7 +36,7 @@
 
         $('.button').click(function() {
          number = prompt('Type any number!');
-           $('.list').append("<li>" + fizzBuzz(number) + "</li>");
+           $('.block').append("<p>" + number + " = " + fizzBuzz(number) + "</p>");
          } );
    </script>
 

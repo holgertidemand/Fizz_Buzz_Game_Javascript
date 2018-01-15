@@ -18,13 +18,15 @@
      <button class="button">Click here</button>
 
 
-     <script> $( document ).ready(function() {
+   <script>
+        $( document ).ready(function() {
         console.log( "document loaded" );
         });
 
-        $('.button').on('click', 'button', function() {
-       number = promt('Type any number!');
-       fizzBuzz(number);
+        $('.button').click(function() {
+         alert('Hello');
+         number = prompt('Type any number!');
+         alert(fizzBuzz(number));
          } );
    </script>
 

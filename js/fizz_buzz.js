@@ -4,21 +4,21 @@
 
 function fizzBuzz(number) {
   if (isNaN(number)) {
-    console.log('Give me a number. Please.');
+    alert('Give me a number. Please.');
   }
   else if (number < 0) {
-    console.log('Give me a positive number. Please.');
+    alert('Give me a positive number. Please.');
   }
   else if (number % 15 == 0) {
-    console.log('FizzBuzz');
+    alert('FizzBuzz');
   }
   else if (number % 5 == 0) {
-    console.log('Buzz');
+    alert('Buzz');
   }
   else if (number % 3 == 0) {
-    console.log('Fizz');
+    alert('Fizz');
   }
   else {
-    console.log(number);
+    alert(number);
   }
 }

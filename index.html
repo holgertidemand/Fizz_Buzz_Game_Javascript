@@ -22,11 +22,20 @@
         Would you like to play?
     </h4>
      <button class="button">Click Here!!</button>
+
+      <div class="block">
+        <p class="random">
+
+        </p>
+      </div>
+
+     <button class="test1">Click Here!!</button>
+     <button class="test2">Click Here!!</button>
+      <button class="test3">Click Here!!</button>
     <h4>
       Results:
     </h4>
-    <div class="block">
-    </div>
+
 
 
    <script>
@@ -35,9 +44,14 @@
         });
 
         $('.button').click(function() {
-         number = prompt('Type any number!');
-           $('.block').prepend("<p>" + number + " = " + fizzBuzz(number) + "</p>");
+          printRanddomNumber()
+          setTimeout('alert("hello")', 5000 );
          } );
+
+        // $('.button').click(function() {
+        //  number = prompt('Type any number!');
+        //    $('.block').prepend("<p>" + number + " = " + fizzBuzz(number) + "</p>");
+        //  } );
    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

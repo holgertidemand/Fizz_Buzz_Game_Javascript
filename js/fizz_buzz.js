@@ -18,3 +18,8 @@ function fizzBuzz(number) {
     return number
   }
 }
+
+function printRanddomNumber (){
+  var randomnumber = Math.floor((Math.random() * 10) + 1);
+  $('.random').replaceWith("<p class='random'>" + randomnumber + "</p>");
+}

@@ -21,22 +21,20 @@
     <h4>
         Would you like to play?
     </h4>
-     <button class="button">Click Here!!</button>
-
+     <button class="button">Play!!</button>
+     <h4>
+       Results:
+     </h4>
       <div class="block">
         <p class="random">
 
         </p>
       </div>
 
-     <button class="test1">Fizz</button>
-     <button class="test2">Buzz</button>
-      <button class="test3">FizzBuzz</button>
-    <h4>
-      Results:
-    </h4>
-
-
+     <button class="test1">Fizz!</button>
+     <button class="test2">Buzz!</button>
+     <button class="test3">FizzBuzz!</button>
+     <button class="test4">None Above!</button>
 
    <script>
         $( document ).ready(function() {
@@ -66,6 +64,14 @@
               $('.test3').click(function(){
                   var fizz_buzz3 = fizzBuzz(random)
                     if (fizz_buzz3 === 'FizzBuzz') {
+                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                    }
+                    else {
+                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                    }});
+                $('.test4').click(function(){
+                  var fizz_buzz3 = fizzBuzz(random)
+                    if (fizz_buzz3 !== 'FizzBuzz' && fizz_buzz3 !== 'Fizz' && fizz_buzz3 !== 'Buzz') {
                       $('.random').replaceWith("<p class='random'>That is correct </p>");
                     }
                     else {

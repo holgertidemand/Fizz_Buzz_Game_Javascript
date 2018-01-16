@@ -29,9 +29,9 @@
         </p>
       </div>
 
-     <button class="test1">Click Here!!</button>
-     <button class="test2">Click Here!!</button>
-      <button class="test3">Click Here!!</button>
+     <button class="test1">Fizz</button>
+     <button class="test2">Buzz</button>
+      <button class="test3">FizzBuzz</button>
     <h4>
       Results:
     </h4>
@@ -44,9 +44,36 @@
         });
 
         $('.button').click(function() {
-          printRanddomNumber()
-          setTimeout('alert("hello")', 5000 );
-         } );
+            var random = randomNumber()
+            //setTimeout('alert("hello")', 5000 );
+            $('.random').replaceWith("<p class='random'>" + random + "</p>");
+            $('.test1').click(function(){
+              var fizz_buzz = fizzBuzz(random)
+                if (fizz_buzz === 'Fizz') {
+                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                }
+                else {
+                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                }});
+              $('.test2').click(function(){
+                  var fizz_buzz2 = fizzBuzz(random)
+                    if (fizz_buzz2 === 'Buzz') {
+                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                    }
+                    else {
+                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                    }});
+              $('.test3').click(function(){
+                  var fizz_buzz3 = fizzBuzz(random)
+                    if (fizz_buzz3 === 'FizzBuzz') {
+                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                    }
+                    else {
+                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                    }});
+           });
+
+
 
         // $('.button').click(function() {
         //  number = prompt('Type any number!');

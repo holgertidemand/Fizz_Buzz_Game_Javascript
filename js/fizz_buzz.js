@@ -1,3 +1,6 @@
+
+
+
 function fizzBuzz(number) {
   if (isNaN(number)) {
       return 'Give me a number. Please.'
@@ -19,7 +22,9 @@ function fizzBuzz(number) {
   }
 }
 
-function printRanddomNumber (){
-  var randomnumber = Math.floor((Math.random() * 10) + 1);
-  $('.random').replaceWith("<p class='random'>" + randomnumber + "</p>");
+
+function randomNumber (){
+  var randomnumber = Math.floor((Math.random() * 15) + 1);
+  return randomnumber
+  //$('.random').replaceWith("<p class='random'>" + randomnumber + "</p>");
 }

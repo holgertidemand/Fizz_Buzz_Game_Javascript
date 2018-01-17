@@ -12,83 +12,93 @@
   <body>
 
 
-    <h1>
+    <!-- <h1>
        Welcome to the FizzBuzz Game!
-    </h1>
+    </h1> -->
     <div>
         <img src="img/FizzBuzz.jpg" alt="I'm Fizz and I'm Buzz"/>
+        <div>
+          <p class="rules">
+          Any number divisible by three is replaced by the word fizz and any divisible by five by the word buzz. Numbers divisible by both become fizz buzz.
+          </p>
+        </div>
+
+
     </div>
-    <h4>
-        Would you like to play?
-    </h4>
+
      <button class="button">Play!!</button>
-     <h4>
+     <!-- <h4>
        Results:
-     </h4>
+     </h4> -->
       <div class="block">
         <p class="random">
 
         </p>
       </div>
 <div class="row">
+    <button class="test4">None</button>
     <button class="test1">Fizz!</button>
-     <button class="test2">Buzz!</button>
-     <button class="test3">FizzBuzz!</button>
-     <button class="test4">None Above!</button>
-      <button class="result">Get your score!</button>
+    <button class="test3">FizzBuzz!</button>
+    <button class="test2">Buzz!</button>
+    <button class="result">Get your score!</button>
 </div>
    <script>
         var click_count = 0
         var user_points = 0
+        var good_path = "<p class='random'>That is correct,\n press play to continue. </p>"
+        var sad_path = "<p class='random'>That is wrong,\n press play to continue. </p>"
 
         $('.button').click(function() {
             var random = randomNumber()
-            //setTimeout('alert("hello")', 5000 );
+            click_count += 1
             $('.random').replaceWith("<p class='random'>" + random + "</p>");
 
 
             $('.test1').click(function(){
               var fizz_buzz = fizzBuzz(random)
                 if (fizz_buzz === 'Fizz') {
-                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      $('.random').replaceWith(good_path);
                       user_points += 1
                 }
                 else {
-                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                      $('.random').replaceWith(sad_path);
                 }});
               $('.test2').click(function(){
                   var fizz_buzz2 = fizzBuzz(random)
                     if (fizz_buzz2 === 'Buzz') {
-                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      $('.random').replaceWith(good_path);
                       user_points += 1
                     }
                     else {
-                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                      $('.random').replaceWith(sad_path);
                     }});
               $('.test3').click(function(){
                   var fizz_buzz3 = fizzBuzz(random)
                     if (fizz_buzz3 === 'FizzBuzz') {
-                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      $('.random').replaceWith(good_path);
                       user_points += 1
                     }
                     else {
-                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                      $('.random').replaceWith(sad_path);
                     }});
                 $('.test4').click(function(){
-                  var fizz_buzz3 = fizzBuzz(random)
-                    if (fizz_buzz3 !== 'FizzBuzz' && fizz_buzz3 !== 'Fizz' && fizz_buzz3 !== 'Buzz') {
-                      $('.random').replaceWith("<p class='random'>That is correct </p>");
+                  var fizz_buzz4 = fizzBuzz(random)
+                    if (fizz_buzz4 !== 'FizzBuzz' && fizz_buzz4 !== 'Fizz' && fizz_buzz4 !== 'Buzz') {
+                      $('.random').replaceWith(good_path);
                       user_points += 1
                     }
                     else {
-                      $('.random').replaceWith("<p class='random'>That is wrong </p>");
+                      $('.random').replaceWith(sad_path);
                     }});
            });
 
          $('.result').click(function(){
-            saveData(user_points);
-            var score = printSavedData();
-            $('.random').replaceWith("<p class='random'>Your score: " + score + " </p>");
+            saveData(user_points, click_count);
+            var score = returnSavedScore();
+            var attempts = returnSavedAttempts();
+            $('.random').replaceWith(
+            "<p class='random'>Your score: " + score + " \n in " + attempts + " attempts. </p>"
+            );
 
          });
 

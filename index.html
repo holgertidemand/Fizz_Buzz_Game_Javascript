@@ -27,9 +27,9 @@
     </div>
 
      <button class="button">Play!!</button>
-     <!-- <h4>
+     <h4 class="holger">
        Results:
-     </h4> -->
+     </h4>
       <div class="block">
         <p class="random">
 
@@ -52,7 +52,7 @@
             var random = randomNumber()
             click_count += 1
             $('.random').replaceWith("<p class='random'>" + random + "</p>");
-
+            countDown(10, '.holger')
 
             $('.test1').click(function(){
               var fizz_buzz = fizzBuzz(random)

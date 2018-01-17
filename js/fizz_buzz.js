@@ -44,3 +44,16 @@ function returnSavedAttempts(){
   var attempts = sessionStorage.getItem('Attempts: ');
   return attempts;
 }
+
+function countDown(seconds, element) {
+  var holger = $(element);
+  holger.html("You have " + seconds + " seconds to answer");
+  if (seconds < 1) {
+    clearTimeout(timer);
+    holger.replaceWith('<h4>You have timed out. Your Score is set to 0</h4>');
+    user_points = 0;
+  }
+
+  seconds--;
+  var timer = setTimeout('countDown('+seconds+', "'+element+'")', 1000);
+}

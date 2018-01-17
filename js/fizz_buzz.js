@@ -45,13 +45,22 @@ function returnSavedAttempts(){
   return attempts;
 }
 
+function submitScore(name, score){
+  var user = localStorage.setItem(name, score);
+}
+
 function countDown(seconds, element) {
   var holger = $(element);
+  var score = returnSavedScore();
+  var attempts = returnSavedAttempts();
   holger.html("You have " + seconds + " seconds to answer");
+
   if (seconds < 1) {
     clearTimeout(timer);
-    holger.replaceWith('<h4>You have timed out. Your Score is set to 0</h4>');
-    user_points = 0;
+    holger.replaceWith('<h4>You answered ' + attempts + ' times and got the score: ' + score + '<a href="#"> HighScore</a></h4>');
+    // alert('Great jobb! You answered ' + attempts + ' times and got the score: ' + score);
+    // var name = prompt('Please type in your username.');
+    submitScore(user_name, score);
   }
 
   seconds--;

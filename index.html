@@ -25,8 +25,9 @@
 
 
     </div>
+     <button class="start">Start Timer</button>
+     <button class="button">Number Generator!</button>
 
-     <button class="button">Play!!</button>
      <h4 class="holger">
        Results:
      </h4>
@@ -40,7 +41,7 @@
     <button class="test1">Fizz!</button>
     <button class="test3">FizzBuzz!</button>
     <button class="test2">Buzz!</button>
-    <button class="result">Get your score!</button>
+    <!-- <button class="result">Get your score!</button> -->
 </div>
    <script>
         var click_count = 0
@@ -48,11 +49,16 @@
         var good_path = "<p class='random'>That is correct,\n press play to continue. </p>"
         var sad_path = "<p class='random'>That is wrong,\n press play to continue. </p>"
 
+        $('.start').click(function(){
+          var user_name = prompt('Enter your Username:')
+          countDown(10, '.holger')
+        });
+
         $('.button').click(function() {
             var random = randomNumber()
             click_count += 1
             $('.random').replaceWith("<p class='random'>" + random + "</p>");
-            countDown(10, '.holger')
+          //  countDown(10, '.holger')
 
             $('.test1').click(function(){
               var fizz_buzz = fizzBuzz(random)
@@ -92,15 +98,15 @@
                     }});
            });
 
-         $('.result').click(function(){
-            saveData(user_points, click_count);
-            var score = returnSavedScore();
-            var attempts = returnSavedAttempts();
-            $('.random').replaceWith(
-            "<p class='random'>Your score: " + score + " \n in " + attempts + " attempts. </p>"
-            );
-
-         });
+         // $('.result').click(function(){
+         //    saveData(user_points, click_count);
+         //    var score = returnSavedScore();
+         //    var attempts = returnSavedAttempts();
+         //    $('.random').replaceWith(
+         //    "<p class='random'>Your score: " + score + " \n in " + attempts + " attempts. </p>"
+         //    );
+         //
+         // });
 
 
 

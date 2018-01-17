@@ -28,3 +28,13 @@ function randomNumber (){
   return randomnumber
   //$('.random').replaceWith("<p class='random'>" + randomnumber + "</p>");
 }
+
+function saveData(x) {
+    x.toString();
+    sessionStorage.setItem('Score: ', x);
+}
+
+function printSavedData(){
+  var score = sessionStorage.getItem('Score: ');
+  return score;
+}

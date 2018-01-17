@@ -30,25 +30,28 @@
 
         </p>
       </div>
-
-     <button class="test1">Fizz!</button>
+<div class="row">
+    <button class="test1">Fizz!</button>
      <button class="test2">Buzz!</button>
      <button class="test3">FizzBuzz!</button>
      <button class="test4">None Above!</button>
-
+      <button class="result">Get your score!</button>
+</div>
    <script>
-        $( document ).ready(function() {
-        console.log( "document loaded" );
-        });
+        var click_count = 0
+        var user_points = 0
 
         $('.button').click(function() {
             var random = randomNumber()
             //setTimeout('alert("hello")', 5000 );
             $('.random').replaceWith("<p class='random'>" + random + "</p>");
+
+
             $('.test1').click(function(){
               var fizz_buzz = fizzBuzz(random)
                 if (fizz_buzz === 'Fizz') {
                       $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      user_points += 1
                 }
                 else {
                       $('.random').replaceWith("<p class='random'>That is wrong </p>");
@@ -57,6 +60,7 @@
                   var fizz_buzz2 = fizzBuzz(random)
                     if (fizz_buzz2 === 'Buzz') {
                       $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      user_points += 1
                     }
                     else {
                       $('.random').replaceWith("<p class='random'>That is wrong </p>");
@@ -65,6 +69,7 @@
                   var fizz_buzz3 = fizzBuzz(random)
                     if (fizz_buzz3 === 'FizzBuzz') {
                       $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      user_points += 1
                     }
                     else {
                       $('.random').replaceWith("<p class='random'>That is wrong </p>");
@@ -73,18 +78,22 @@
                   var fizz_buzz3 = fizzBuzz(random)
                     if (fizz_buzz3 !== 'FizzBuzz' && fizz_buzz3 !== 'Fizz' && fizz_buzz3 !== 'Buzz') {
                       $('.random').replaceWith("<p class='random'>That is correct </p>");
+                      user_points += 1
                     }
                     else {
                       $('.random').replaceWith("<p class='random'>That is wrong </p>");
                     }});
            });
 
+         $('.result').click(function(){
+            saveData(user_points);
+            var score = printSavedData();
+            $('.random').replaceWith("<p class='random'>Your score: " + score + " </p>");
+
+         });
 
 
-        // $('.button').click(function() {
-        //  number = prompt('Type any number!');
-        //    $('.block').prepend("<p>" + number + " = " + fizzBuzz(number) + "</p>");
-        //  } );
+
    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
